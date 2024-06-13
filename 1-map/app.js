@@ -4,10 +4,20 @@ const obj = [
     {id: 1, name: 'Вася'}
 ];
 
-const mySet = new Set();
+const cleanObject = (obj) => {
+    const verification = new Set();
 
-obj.map(item => {
-    
-})
+    const newObj = obj.filter(item => {
+        if(verification.has(item.id)) {
+            return false;
+        }
 
-console.log(obj);
+        verification.add(item.id);
+        return true;
+    });
+
+    return newObj;
+}
+
+console.log(cleanObject(obj))
+
