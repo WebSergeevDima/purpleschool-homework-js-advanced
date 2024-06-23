@@ -1,3 +1,5 @@
+'use strict';
+
 function is18(date) {
     const now = new Date();
     const userDate = new Date(date);
