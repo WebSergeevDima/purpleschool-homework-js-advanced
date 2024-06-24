@@ -12,8 +12,6 @@ let timeStart = newYear.getTime() - now.getTime();
 setInterval(() => {
     timeStart -= 1000;
 
-    console.log(new Intl.DateTimeFormat('RU-ru').format(timeStart))
-
     const [date, time] = new Intl.DateTimeFormat('RU-ru',  {
         month: 'numeric',
         day: 'numeric',
