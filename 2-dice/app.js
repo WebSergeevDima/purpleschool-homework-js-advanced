@@ -1,10 +1,23 @@
 'use strict';
 
 const throwDice = (type) => {
-    const numbers = new Set([4, 6 ,8 ,10, 12, 16, 20]);
-    const number = type.split('d')[1];
+    const getRandomNumber = (number) => Math.floor(Math.random() * number + 1);
 
-    return numbers.has(Number(number)) ? Math.floor(Math.random() * number + 1) : 'Такого Дайса не существует!';
+    const dices = {
+        'd4': getRandomNumber(4),
+        'd6': getRandomNumber(6),
+        'd8': getRandomNumber(8),
+        'd10': getRandomNumber(10),
+        'd12': getRandomNumber(12),
+        'd16': getRandomNumber(16),
+        'd20': getRandomNumber(20),
+    }
+
+    if(dices.hasOwnProperty(type)) {
+        return dices[type];
+    }
+
+    return 'Такого Дайса не существует!';
 };
 
 console.log(throwDice('d6'));
